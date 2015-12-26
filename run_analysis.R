@@ -15,14 +15,17 @@ mergeData <- function(path = "UCI HAR Dataset") {
     merged
 }
 
-# Extracts only the measurements on the mean and standard deviation for each measurement
-extractMeasurements <- function() {
-    
+# Extracts only the measurements on the mean and standard deviation for each measurement, keeping the subject and activity
+extractMeanStdMeasurements <- function(df = mergeData()) {
+    df <- df[c(1,2,grep("\\.(mean|std)\\.", names(df)))]
+    df
 }
 
 # Creates a second, independent tidy data set with the average of each variable for each activity and each subject
-averageData <- function() {
-    
+averageData <- function(df = extractMeanStdMeasurements()) {
+    # Only calculate mean on the measurement columns, not on the first two (subject, activity)
+    aveDF <- aggregate(df[3:length(df)], list(Activity = df$Activity, Subject = df$Subject), mean)
+    aveDF
 }
 
 # Internal function to create a data frame that contains subject, activity, and measurements using descriptive labels
