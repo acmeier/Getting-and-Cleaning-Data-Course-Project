@@ -1,10 +1,10 @@
 # Getting-and-Cleaning-Data-Course-Project
 
-There are three callable functions that build on each other and a fourth utility function that is used by the other functions.  These are all contained in the run_analysis.R script file.  You can call each of the three main functions, in order, to build the new tidy data set of averages step-by-step.  Alternatively, you can just call averageData() without passing in any arguments and it will run all the steps together.
+There are three callable functions that build on each other and a fourth utility function that is used by the other functions.  These are all contained in the *run_analysis.R* script file.  You can call each of the three main functions, in order, to build the new tidy data set of averages step-by-step.  Alternatively, you can just call `averageData()` without passing in any arguments and it will run all the steps together.
 
-1. mergeData(path = "UCI HAR Dataset") - Merges the training and the test sets to create one data set.  You can specify a path to the data folder or let it default to "UCI HAR Dataset"
-2. extractMeanStdMeasurements(df = mergeData()) - Extracts only the measurements on the mean and standard deviation for each measurement, keeping the subject and activity data as well.  You can pass in a pre-existing data frame or let it default to calling mergeData and using the data frame generated from that function.
-3. averageData(df = extractMeanStdMeasurements()) - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.  You can pass in a pre-existing data frame or let it default to calling extractMeanStdMeasurements and using the data frame generated from that function.
+1. `mergeData(path = "UCI HAR Dataset")` - Merges the training and the test sets to create one data set.  You can specify a path to the data folder or let it default to "UCI HAR Dataset"
+2. `extractMeanStdMeasurements(df = mergeData())` - Extracts only the measurements on the mean and standard deviation for each measurement, keeping the subject and activity data as well.  You can pass in a pre-existing data frame or let it default to calling `mergeData` and using the data frame generated from that function.
+3. `averageData(df = extractMeanStdMeasurements())` - Creates a second, independent tidy data set with the average of each variable for each activity and each subject.  You can pass in a pre-existing data frame or let it default to calling `extractMeanStdMeasurements` and using the data frame generated from that function.
 
 
 ## Project description
